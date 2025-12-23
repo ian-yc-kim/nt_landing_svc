@@ -3,8 +3,8 @@ import { describe, it, expect } from 'vitest'
 import App from './App'
 
 describe('App', () => {
-  it('renders the app', () => {
+  it('renders Hello World text', () => {
     render(<App />)
-    expect(screen.getByText(/React Template/i)).toBeInTheDocument()
+    expect(screen.getByText('Hello World')).toBeInTheDocument()
   })
 })
