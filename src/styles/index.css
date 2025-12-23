@@ -32,17 +32,20 @@ body {
   min-height: 100vh;
 
   display: flex;
+  place-items: center;
   align-items: center;
   justify-content: center;
+
+  /* Prominent typography applied at the page level */
+  font-size: 3rem;
+  font-weight: bold;
 
   background-color: var(--page-bg);
   color: var(--page-fg);
 }
 
-/* Prominent landing page typography */
+/* Prominent landing page typography for inner content */
 main {
-  font-size: 3rem; /* large, landing-page title size */
-  font-weight: 700;
   text-align: center;
   line-height: 1.1;
   padding: 1rem;
