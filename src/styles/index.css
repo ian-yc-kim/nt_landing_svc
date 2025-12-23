@@ -1,12 +1,17 @@
 :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 
-    'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* Typography and system font stack */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --line-height: 1.5;
+  --font-weight-default: 400;
 
+  /* Preserve color-scheme support and expose page color variables */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --page-bg: #242424;
+  --page-fg: rgba(255, 255, 255, 0.87);
+
+  font-family: var(--font-family);
+  line-height: var(--line-height);
+  font-weight: var(--font-weight-default);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,14 +25,35 @@
   padding: 0;
 }
 
+/* Center content and ensure full-viewport background */
 body {
+  margin: 0; /* prevent scrolling artifacts */
   min-width: 320px;
   min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--page-bg);
+  color: var(--page-fg);
 }
 
+/* Prominent landing page typography */
+main {
+  font-size: 3rem; /* large, landing-page title size */
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.1;
+  padding: 1rem;
+  max-width: 90ch;
+  word-break: break-word;
+}
+
+/* Light mode overrides while preserving variables */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    --page-bg: #ffffff;
+    --page-fg: #213547;
   }
 }
